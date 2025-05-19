@@ -1,15 +1,15 @@
 from django.db.models import Sum
 from django.contrib.auth.models import User
-from rest_framework import viewsets, permissions, status
+from rest_framework import viewsets, permissions
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.generics import CreateAPIView
 from django.utils import timezone
-from datetime import datetime, timedelta
+from datetime import timedelta
 from .models import UserProfile, Account, Category, Transaction, Budget, Goal
 from .serializers import (
-    UserSerializer, UserProfileSerializer, RegisterSerializer, AccountSerializer,
+    UserProfileSerializer, RegisterSerializer, AccountSerializer,
     CategorySerializer, TransactionSerializer, BudgetSerializer, GoalSerializer
 )
 
