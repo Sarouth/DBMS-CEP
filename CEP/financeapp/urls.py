@@ -17,10 +17,10 @@ urlpatterns = [
     # Authentication endpoints
     path('register/', RegisterView.as_view(), name='register'),
     path('profile/', UserProfileView.as_view(), name='user-profile'),
-    
+
     # Dashboard data
     path('dashboard/summary/', dashboard_summary, name='dashboard-summary'),
-    
+
     # Include the router URLs
     path('', include(router.urls)),
 ]

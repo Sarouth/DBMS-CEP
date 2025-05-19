@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class UserProfileSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)
-    
+
     class Meta:
         model = UserProfile
         fields = ('id', 'user', 'preferred_currency')
@@ -18,7 +18,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
 class RegisterSerializer(serializers.ModelSerializer):
     preferred_currency = serializers.CharField(write_only=True)
-    
+
     class Meta:
         model = User
         fields = ('username', 'email', 'password', 'first_name', 'last_name', 'preferred_currency')
@@ -46,7 +46,7 @@ class TransactionSerializer(serializers.ModelSerializer):
     account_name = serializers.ReadOnlyField(source='account.name')
     category_name = serializers.ReadOnlyField(source='category.name')
     category_color = serializers.ReadOnlyField(source='category.color')
-    
+
     class Meta:
         model = Transaction
         fields = ('id', 'account', 'account_name', 'category', 'category_name', 'category_color', 
@@ -60,7 +60,7 @@ class BudgetSerializer(serializers.ModelSerializer):
     spent_amount = serializers.SerializerMethodField()
     remaining_amount = serializers.SerializerMethodField()
     percentage_used = serializers.SerializerMethodField()
-    
+
     class Meta:
         model = Budget
         fields = ('id', 'category', 'category_name', 'category_color', 'amount', 
@@ -68,13 +68,13 @@ class BudgetSerializer(serializers.ModelSerializer):
                   'start_date', 'end_date', 'created_at')
         read_only_fields = ('id', 'created_at', 'spent_amount', 'remaining_amount', 'percentage_used', 
                            'category_name', 'category_color')
-    
+
     def get_spent_amount(self, obj):
         return obj.get_spent_amount()
-    
+
     def get_remaining_amount(self, obj):
         return obj.get_remaining()
-    
+
     def get_percentage_used(self, obj):
         if obj.amount == 0:
             return 0
@@ -82,12 +82,12 @@ class BudgetSerializer(serializers.ModelSerializer):
 
 class GoalSerializer(serializers.ModelSerializer):
     percentage_complete = serializers.SerializerMethodField()
-    
+
     class Meta:
         model = Goal
         fields = ('id', 'name', 'target_amount', 'current_amount', 'target_date', 
                   'percentage_complete', 'created_at')
         read_only_fields = ('id', 'created_at', 'percentage_complete')
-    
+
     def get_percentage_complete(self, obj):
         return obj.get_percentage_complete()
