@@ -19,7 +19,8 @@ class RegisterView(CreateAPIView):
     serializer_class = RegisterSerializer
 
 class UserProfileView(APIView):
-    def get(self, request):
+    @staticmethod
+    def get(request):
         profile, created = UserProfile.objects.get_or_create(user=request.user)
         serializer = UserProfileSerializer(profile)
         return Response(serializer.data)

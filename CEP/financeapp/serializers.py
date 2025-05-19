@@ -24,7 +24,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         fields = ('username', 'email', 'password', 'first_name', 'last_name', 'preferred_currency')
         extra_kwargs = {'password': {'write_only': True}}
 
-    def create(self, validated_data):
+    @staticmethod
+    def create(validated_data):
         preferred_currency = validated_data.pop('preferred_currency')
         user = User.objects.create_user(**validated_data)
         UserProfile.objects.create(user=user, preferred_currency=preferred_currency)
@@ -69,13 +70,16 @@ class BudgetSerializer(serializers.ModelSerializer):
         read_only_fields = ('id', 'created_at', 'spent_amount', 'remaining_amount', 'percentage_used', 
                            'category_name', 'category_color')
 
-    def get_spent_amount(self, obj):
+    @staticmethod
+    def get_spent_amount(obj):
         return obj.get_spent_amount()
 
-    def get_remaining_amount(self, obj):
+    @staticmethod
+    def get_remaining_amount(obj):
         return obj.get_remaining()
 
-    def get_percentage_used(self, obj):
+    @staticmethod
+    def get_percentage_used(obj):
         if obj.amount == 0:
             return 0
         return (obj.get_spent_amount() / obj.amount) * 100
@@ -89,5 +93,6 @@ class GoalSerializer(serializers.ModelSerializer):
                   'percentage_complete', 'created_at')
         read_only_fields = ('id', 'created_at', 'percentage_complete')
 
-    def get_percentage_complete(self, obj):
+    @staticmethod
+    def get_percentage_complete(obj):
         return obj.get_percentage_complete()
