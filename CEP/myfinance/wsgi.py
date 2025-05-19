@@ -1,6 +1,4 @@
-"""
-WSGI config for myfinance project.
-"""
+"""WSGI config for myfinance project."""
 import os
 from django.core.wsgi import get_wsgi_application
 

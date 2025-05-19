@@ -1,6 +1,4 @@
-"""
-ASGI config for myfinance project.
-"""
+"""ASGI config for myfinance project."""
 import os
 from django.core.asgi import get_asgi_application
 
