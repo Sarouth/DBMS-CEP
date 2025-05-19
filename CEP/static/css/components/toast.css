@@ -1,0 +1,46 @@
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 300px;
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.toast-content i {
+  font-size: 1.5rem;
+}
+
+.toast-content i.success {
+  color: var(--color-success);
+}
+
+.toast-content i.error {
+  color: var(--color-error);
+}
+
+.toast-message {
+  flex-grow: 1;
+  font-size: 0.875rem;
+}
+
+.toast-progress {
+  height: 4px;
+  background-color: var(--color-secondary);
+  animation: progress 3s linear forwards;
+}
+
+@keyframes progress {
+  from { width: 100%; }
+  to { width: 0; }
+}

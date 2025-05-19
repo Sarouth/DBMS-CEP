@@ -1,0 +1,46 @@
+<div class="transactions-content">
+  <div class="section-header">
+    <h2>Transactions</h2>
+    <button id="new-transaction-btn" class="btn btn-secondary">
+      <i class="fas fa-plus"></i> New Transaction
+    </button>
+  </div>
+  
+  <div class="transactions-filter">
+    <div class="filter-group">
+      <label for="filter-account">Account</label>
+      <select id="filter-account">
+        <option value="all">All Accounts</option>
+        <!-- Will be populated by JavaScript -->
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="filter-category">Category</label>
+      <select id="filter-category">
+        <option value="all">All Categories</option>
+        <!-- Will be populated by JavaScript -->
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="filter-type">Type</label>
+      <select id="filter-type">
+        <option value="all">All Types</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="filter-date">Date Range</label>
+      <select id="filter-date">
+        <option value="all">All Time</option>
+        <option value="month">This Month</option>
+        <option value="quarter">Last 3 Months</option>
+        <option value="year">This Year</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="transactions-list" class="transactions-list">
+    <!-- Will be populated by JavaScript -->
+  </div>
+</div>

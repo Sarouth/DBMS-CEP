@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyFinance - Personal Finance Manager</title>
+  <meta name="description" content="Simple personal finance management system" />
+  <meta name="author" content="Lovable" />
+  
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Base Styles -->
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/components/layout.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/forms.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/buttons.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/modal.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/components/toast.css' %}" />
+  
+  <!-- Feature-specific Styles -->
+  <link rel="stylesheet" href="{% static 'css/features/auth.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/features/dashboard.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/features/accounts.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/features/transactions.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/features/categories.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/features/budgets.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/features/goals.css' %}" />
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+</head>
+<body>
+  <div id="app" class="app">
+    <!-- Import all feature components -->
+    <div id="auth-section">
+      <!-- Auth component will be loaded here -->
+      {% include 'features/auth.html' %}
+    </div>
+    
+    <div id="main-app-section" class="hidden">
+      <!-- Main application components -->
+      <div id="sidebar-container">
+        {% include 'components/sidebar.html' %}
+      </div>
+      <main class="main-content">
+        <div id="header-container">
+          {% include 'components/header.html' %}
+        </div>
+        
+        <!-- Feature pages -->
+        <div id="dashboard-container" class="page active">
+          {% include 'features/dashboard.html' %}
+        </div>
+        <div id="accounts-container" class="page">
+          {% include 'features/accounts.html' %}
+        </div>
+        <div id="transactions-container" class="page">
+          {% include 'features/transactions.html' %}
+        </div>
+        <div id="categories-container" class="page">
+          {% include 'features/categories.html' %}
+        </div>
+        <div id="budgets-container" class="page">
+          {% include 'features/budgets.html' %}
+        </div>
+        <div id="goals-container" class="page">
+          {% include 'features/goals.html' %}
+        </div>
+      </main>
+    </div>
+    
+    <!-- Modal containers -->
+    <div id="modal-overlay" class="modal-overlay hidden"></div>
+    <div id="modals-container">
+      {% include 'components/modals/account-modal.html' %}
+      {% include 'components/modals/transaction-modal.html' %}
+      {% include 'components/modals/category-modal.html' %}
+      {% include 'components/modals/budget-modal.html' %}
+      {% include 'components/modals/goal-modal.html' %}
+    </div>
+    
+    <!-- Toast container -->
+    <div id="toast-container">
+      {% include 'components/toast.html' %}
+    </div>
+  </div>
+  
+  <!-- External Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  
+  <!-- Load Django static tag at the top -->
+  
+  <!-- Custom JavaScript -->
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

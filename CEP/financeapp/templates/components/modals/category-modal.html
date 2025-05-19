@@ -1,0 +1,36 @@
+<div id="category-modal" class="modal hidden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="category-modal-title">New Category</h2>
+      <button class="close-modal"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <form id="category-form">
+        <input type="hidden" id="category-id">
+        <div class="form-group">
+          <label for="category-name">Category Name</label>
+          <input type="text" id="category-name" placeholder="e.g., Groceries" required>
+        </div>
+        <div class="form-group">
+          <label for="category-type">Category Type</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="category-type" value="income"> Income
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="category-type" value="expense" checked> Expense
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="category-color">Color</label>
+          <input type="color" id="category-color" value="#F56565">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline close-modal">Cancel</button>
+      <button id="save-category-btn" class="btn btn-primary">Save Category</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div id="budget-modal" class="modal hidden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="budget-modal-title">New Budget</h2>
+      <button class="close-modal"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <form id="budget-form">
+        <input type="hidden" id="budget-id">
+        <div class="form-group">
+          <label for="budget-category">Category</label>
+          <select id="budget-category" required>
+            <!-- Will be populated by JavaScript -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="budget-amount">Monthly Limit</label>
+          <div class="input-with-currency">
+            <span id="budget-currency-symbol">$</span>
+            <input type="number" id="budget-amount" step="0.01" min="0" placeholder="0.00" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="budget-start-date">Start Date</label>
+          <input type="date" id="budget-start-date" required>
+        </div>
+        <div class="form-group">
+          <label for="budget-end-date">End Date (Optional)</label>
+          <input type="date" id="budget-end-date">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline close-modal">Cancel</button>
+      <button id="save-budget-btn" class="btn btn-primary">Save Budget</button>
+    </div>
+  </div>
+</div>

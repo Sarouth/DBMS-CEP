@@ -1,0 +1,56 @@
+<div class="dashboard-content">
+  <div class="dashboard-summary">
+    <div class="summary-card">
+      <div class="card-icon green">
+        <i class="fas fa-wallet"></i>
+      </div>
+      <div class="card-content">
+        <h3>Total Balance</h3>
+        <p id="total-balance" class="amount">$0.00</p>
+      </div>
+    </div>
+    <div class="summary-card">
+      <div class="card-icon blue">
+        <i class="fas fa-arrow-down"></i>
+      </div>
+      <div class="card-content">
+        <h3>Income</h3>
+        <p id="total-income" class="amount">$0.00</p>
+      </div>
+    </div>
+    <div class="summary-card">
+      <div class="card-icon red">
+        <i class="fas fa-arrow-up"></i>
+      </div>
+      <div class="card-content">
+        <h3>Expenses</h3>
+        <p id="total-expenses" class="amount">$0.00</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-charts">
+    <div class="chart-container">
+      <h2>Income vs Expenses</h2>
+      <div class="canvas-container">
+        <canvas id="income-expense-chart"></canvas>
+      </div>
+    </div>
+    <div class="chart-container">
+      <h2>Spending by Category</h2>
+      <div class="canvas-container">
+        <canvas id="category-chart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="recent-transactions">
+    <div class="section-header">
+      <h2>Recent Transactions</h2>
+      <a href="#" class="view-all" data-page="transactions">View All</a>
+    </div>
+    <div class="transactions-list" id="dashboard-transactions">
+      <!-- Will be populated by JavaScript -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <h2><i class="fas fa-wallet"></i> MyFinance</h2>
+  </div>
+  <nav class="sidebar-nav">
+    <ul>
+      <li><a href="#" class="nav-link active" data-page="dashboard"><i class="fas fa-chart-pie"></i> Dashboard</a></li>
+      <li><a href="#" class="nav-link" data-page="accounts"><i class="fas fa-university"></i> Accounts</a></li>
+      <li><a href="#" class="nav-link" data-page="transactions"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
+      <li><a href="#" class="nav-link" data-page="categories"><i class="fas fa-tags"></i> Categories</a></li>
+      <li><a href="#" class="nav-link" data-page="budgets"><i class="fas fa-bullseye"></i> Budgets</a></li>
+      <li><a href="#" class="nav-link" data-page="goals"><i class="fas fa-flag"></i> Goals</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-footer">
+    <div id="user-info" class="user-info">
+      <div class="user-avatar">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="user-details">
+        <span id="user-name">John Doe</span>
+        <small id="user-email">john@example.com</small>
+      </div>
+    </div>
+    <button id="logout-btn" class="btn btn-outline"><i class="fas fa-sign-out-alt"></i> Logout</button>
+  </div>
+</aside>
+
+<style>
+  .sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--bg-sidebar);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .sidebar-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .sidebar-header h2 {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .sidebar-nav {
+    padding: 1.5rem 0;
+    flex-grow: 1;
+  }
+
+  .sidebar-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s;
+  }
+
+  .nav-link i {
+    width: 20px;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: var(--color-white);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-link.active {
+    border-left: 3px solid var(--color-secondary);
+  }
+
+  .sidebar-footer {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+  }
+
+  .user-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-details small {
+    opacity: 0.7;
+  }
+
+  .logout-btn {
+    width: 100%;
+  }
+</style>

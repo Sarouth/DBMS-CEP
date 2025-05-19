@@ -1,0 +1,70 @@
+<div id="transaction-modal" class="modal hidden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="transaction-modal-title">New Transaction</h2>
+      <button class="close-modal"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <form id="transaction-form">
+        <input type="hidden" id="transaction-id">
+        <div class="form-group">
+          <label for="transaction-type">Transaction Type</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="transaction-type" value="income" checked> Income
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="transaction-type" value="expense"> Expense
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="transaction-amount">Amount</label>
+          <div class="input-with-currency">
+            <span id="currency-symbol">$</span>
+            <input type="number" id="transaction-amount" step="0.01" min="0" placeholder="0.00" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="transaction-description">Description</label>
+          <input type="text" id="transaction-description" placeholder="Describe this transaction" required>
+        </div>
+        <div class="form-group">
+          <label for="transaction-date">Date</label>
+          <input type="date" id="transaction-date" required>
+        </div>
+        <div class="form-group">
+          <label for="transaction-account">Account</label>
+          <select id="transaction-account" required>
+            <!-- Will be populated by JavaScript -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="transaction-category">Category</label>
+          <select id="transaction-category" required>
+            <!-- Will be populated by JavaScript -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="transaction-payment">Payment Method</label>
+          <select id="transaction-payment">
+            <option value="cash">Cash</option>
+            <option value="debit">Debit Card</option>
+            <option value="credit">Credit Card</option>
+            <option value="bank">Bank Transfer</option>
+            <option value="mobile">Mobile Payment</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="transaction-note">Notes (Optional)</label>
+          <textarea id="transaction-note" rows="2"></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline close-modal">Cancel</button>
+      <button id="save-transaction-btn" class="btn btn-primary">Save Transaction</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+:root {
+  /* Main color palette */
+  --color-primary: #1A365D;
+  --color-primary-dark: #0F2942;
+  --color-primary-light: #2A4A73;
+  --color-secondary: #38B2AC;
+  --color-secondary-dark: #2C8F8A;
+  --color-secondary-light: #4FD1C5;
+  
+  /* Status colors */
+  --color-success: #48BB78;
+  --color-warning: #ED8936;
+  --color-error: #F56565;
+  --color-info: #4299E1;
+  
+  /* Neutral colors */
+  --color-white: #FFFFFF;
+  --color-black: #1A202C;
+  --color-gray-50: #F7FAFC;
+  --color-gray-100: #EDF2F7;
+  --color-gray-200: #E2E8F0;
+  --color-gray-300: #CBD5E0;
+  --color-gray-400: #A0AEC0;
+  --color-gray-500: #718096;
+  --color-gray-600: #4A5568;
+  --color-gray-700: #2D3748;
+  --color-gray-800: #1A202C;
+  --color-gray-900: #171923;
+  
+  /* UI Elements */
+  --border-radius-sm: 0.25rem;
+  --border-radius: 0.5rem;
+  --border-radius-lg: 1rem;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Light theme default */
+  --bg-body: var(--color-gray-50);
+  --bg-card: var(--color-white);
+  --bg-sidebar: var(--color-primary);
+  --text-primary: var(--color-gray-800);
+  --text-secondary: var(--color-gray-600);
+  --text-muted: var(--color-gray-500);
+  --text-light: var(--color-white);
+  --border-color: var(--color-gray-200);
+
+  /* Sizes */
+  --sidebar-width: 250px;
+  --header-height: 70px;
+}
+
+/* Dark theme */
+.dark-mode {
+  --bg-body: var(--color-gray-900);
+  --bg-card: var(--color-gray-800);
+  --bg-sidebar: var(--color-gray-800);
+  --text-primary: var(--color-gray-100);
+  --text-secondary: var(--color-gray-300);
+  --text-muted: var(--color-gray-400);
+  --border-color: var(--color-gray-700);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--bg-body);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.app {
+  height: 100vh;
+  width: 100%;
+}

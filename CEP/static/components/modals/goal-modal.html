@@ -1,0 +1,39 @@
+<div id="goal-modal" class="modal hidden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="goal-modal-title">New Goal</h2>
+      <button class="close-modal"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <form id="goal-form">
+        <input type="hidden" id="goal-id">
+        <div class="form-group">
+          <label for="goal-name">Goal Name</label>
+          <input type="text" id="goal-name" placeholder="e.g., Vacation Fund" required>
+        </div>
+        <div class="form-group">
+          <label for="goal-target">Target Amount</label>
+          <div class="input-with-currency">
+            <span id="goal-currency-symbol">$</span>
+            <input type="number" id="goal-target" step="0.01" min="0" placeholder="0.00" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="goal-saved">Current Saved Amount</label>
+          <div class="input-with-currency">
+            <span id="goal-saved-currency-symbol">$</span>
+            <input type="number" id="goal-saved" step="0.01" min="0" placeholder="0.00" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="goal-date">Target Date</label>
+          <input type="date" id="goal-date" required>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline close-modal">Cancel</button>
+      <button id="save-goal-btn" class="btn btn-primary">Save Goal</button>
+    </div>
+  </div>
+</div>

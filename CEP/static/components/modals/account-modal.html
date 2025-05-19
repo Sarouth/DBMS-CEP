@@ -1,0 +1,47 @@
+<div id="account-modal" class="modal hidden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="account-modal-title">New Account</h2>
+      <button class="close-modal"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <form id="account-form">
+        <input type="hidden" id="account-id">
+        <div class="form-group">
+          <label for="account-name">Account Name</label>
+          <input type="text" id="account-name" placeholder="e.g., Main Checking" required>
+        </div>
+        <div class="form-group">
+          <label for="account-type">Account Type</label>
+          <select id="account-type" required>
+            <option value="checking">Checking</option>
+            <option value="savings">Savings</option>
+            <option value="credit">Credit Card</option>
+            <option value="investment">Investment</option>
+            <option value="cash">Cash</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="account-balance">Initial Balance</label>
+          <div class="input-with-currency">
+            <span id="account-currency-symbol">$</span>
+            <input type="number" id="account-balance" step="0.01" placeholder="0.00" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="account-number">Account Number (Optional)</label>
+          <input type="text" id="account-number" placeholder="Last 4 digits for reference">
+        </div>
+        <div class="form-group">
+          <label for="account-color">Color</label>
+          <input type="color" id="account-color" value="#4299E1">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline close-modal">Cancel</button>
+      <button id="save-account-btn" class="btn btn-primary">Save Account</button>
+    </div>
+  </div>
+</div>
